@@ -1,4 +1,4 @@
-import unidad1.Automovil;
+package unidad1;
 
 public class App {
 
