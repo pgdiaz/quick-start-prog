@@ -13,7 +13,7 @@ public class OperacionSimulacion implements Operacion {
         try {
             LineaCredito lineaCredito = sesion.getLineaCredito();
             Credito credito = new Credito(lineaCredito);
-            System.out.print("Ingrese el monto solicitado: ");
+            System.out.print("\nIngrese el monto solicitado: ");
             double monto = terminal.nextDouble();
             System.out.print(String.format("Ingrese la cantidad de cuotas %s: ", lineaCredito.getCuotas()));
             int cuotas = terminal.nextInt();

@@ -1,5 +1,5 @@
 Algoritmo Viaje
-	Escribir 'Ingrese la cantidad de alumnos que viajarón: "
+	Escribir 'Ingrese la cantidad de alumnos que viajarán: '
 	Leer cantidadAlumnos
 	costoPorAlumno <- 0
 	costoTotal <- 0
@@ -18,6 +18,6 @@ Algoritmo Viaje
 		Fin Si
 		costoTotal <- cantidadAlumnos * costoPorAlumno
 	Fin Si
-	Escribir 'El costo total del viaje es ', costoTotal
-	Escribir 'Cada alumno deber� pagar ', costoPorAlumno
+	Escribir 'El costo total del viaje es $', costoTotal
+	Escribir 'Cada alumno debe pagar $', costoPorAlumno
 FinAlgoritmo

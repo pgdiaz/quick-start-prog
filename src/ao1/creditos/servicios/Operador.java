@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Operador {
 
+    private Operador() {
+    }
+
     public static Opcion getOpcion(Scanner terminal) {
         boolean error = true;
         Opcion opcion = null;

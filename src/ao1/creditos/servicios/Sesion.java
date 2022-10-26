@@ -15,7 +15,8 @@ public class Sesion {
     private List<Credito> creditos;
 
     public Sesion(Scanner terminal) {
-        System.out.print("Ingrese su nombre y apellido: ");
+        System.out.println("> Inicio de sesión");
+        System.out.print("\nIngrese su nombre y apellido: ");
         this.usuario = terminal.nextLine();
         System.out.print("Ingrese su DNI: ");
         this.dni = terminal.nextLong();

@@ -16,9 +16,13 @@ public class Plataforma {
     public static void main(String[] args) {
         Scanner terminal = new Scanner(System.in);
         Opcion opcion;
+        System.out.println("\n-------------------- Plataforma de crédito --------------------");
         try {
             Sesion sesion = new Sesion(terminal);
             do {
+                terminal.nextLine();
+                System.out.print("\nPresione ENTER para continuar");
+                terminal.nextLine();
                 opcion = Operador.getOpcion(terminal);
                 if (opcion != Opcion.FINALIZAR) {
                     Operacion operacion = Operador.getOperacion(opcion);
