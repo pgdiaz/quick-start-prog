@@ -14,6 +14,17 @@ public class LineaCredito {
         this.cuotas = "[1, 3, 6, 9, 12, 18]";
     }
 
+    public void actualizarMonto(double monto) {
+        double delta = monto - this.monto;
+        if (delta < 0 && Math.abs(delta) > this.balance) {
+            throw new OperacionCrediticiaInvalidaExcepcion("La linea de crédito no puede tener un balance negativo.");
+        }
+        if (delta != 0) {
+            this.balance += delta;
+            this.monto = monto;
+        }
+    }
+
     public double getMonto() {
         return monto;
     }
