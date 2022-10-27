@@ -1,0 +1,50 @@
+@startuml servicios
+package creditos.dominio {
+    Credito o-- LineaCredito
+    Credito o-- Cuota
+}
+package creditos.servicios {
+    class Operador {
+        + Opcion getOpcion(Scanner terminal)
+        + Operacion getOperacion(Opcion opcion)
+    }
+    enum Opcion {
+        BALANCE
+        SIMULACION
+        SOLICITUD
+        INFORME
+        FINALIZAR
+    }
+    interface Operacion {
+        + void ejecutar(Scanner terminal, Sesion sesion)
+    }
+    class Sesion {
+        - long dni
+        - String usuario
+        - LineaCredito lineaCredito
+        - List<Credito> creditos
+        + long getDni()
+        + String getUsuario()
+        + LineaCredito getLineaCredito()
+        + void addCredito(Credito credito)
+        + List>Credito> getCreditos()
+    }
+    Operador o-- Opcion
+    Operador o-- Operacion
+    Operacion <|-- OperacionBalance
+    OperacionBalance o-- Reportes
+    OperacionBalance o-- Credito
+    Operacion <|-- OperacionSimulacion
+    OperacionSimulacion o-- Reportes
+    OperacionSimulacion o-- Credito
+    Operacion <|-- OperacionSolicitud
+    OperacionSolicitud o-- Reportes
+    OperacionSolicitud o-- Credito
+    Operacion <|-- OperacionInformeCrediticio
+    OperacionInformeCrediticio o-- Reportes
+    OperacionInformeCrediticio o-- Credito
+    Operacion o-- Sesion
+    Sesion o-- Credito
+    Sesion o-- LineaCredito
+}
+@enduml

@@ -1,0 +1,41 @@
+@startuml dominio
+package creditos.dominio {
+    class Credito {
+        - double capital
+        - double interes
+        - double tasaInteres
+        - int cantidadCuotas
+        - LocalDate fechaSolicitud
+        - boolean acreditado
+        + int getCantidadCuotas()
+        + double getTasaInteres()
+        + void simular(double monto, int cuotas)
+        + void solicitar(double monto, int cuotas)
+        + double getMontoTotal()
+        + Cuota getCuota(int numeroCuota)
+        + boolean isAcreditado()
+    }
+    class LineaCredito {
+        - double monto;
+        - double balance;
+        - String cuotas;
+        + double getMonto()
+        + double getBalance()
+        + String getCuotas()
+        + void acreditar(double monto)
+        + double getInteres()
+    }
+    class Cuota {
+        - double capital
+        - double interes
+        - LocalDate fechaVencimiento
+        + double getCapital()
+        + double getInteres()
+        + LocalDate getFechaVencimiento()
+        + void setFechaVencimiento(LocalDate fecha)
+        + double getMontoTotal()
+    }
+    Credito o-- LineaCredito
+    Credito o-- Cuota
+}
+@enduml
