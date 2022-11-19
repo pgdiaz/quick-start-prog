@@ -99,7 +99,7 @@ public class Empresa {
         long codigo = terminal.nextLong();
         int indice = productos.buscar(tipo, codigo);
         if (indice < 0) {
-            System.out.println("No se encuentró un producto con el código ingresado");
+            System.out.println("No se encontró un producto con el código ingresado");
         } else {
             productos.imprimir(indice);
         }
